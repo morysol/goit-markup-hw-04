@@ -9,10 +9,6 @@ html {
   box-sizing: inherit;
 }
 
-img {
-  display: block; /* to ask fix space below img */
-}
-
 /* colors */
 
 :root {
@@ -47,16 +43,25 @@ img {
   text-decoration: none; /* GLOBAL remove all links underline */
 }
 
-ul {
-  list-style-type: none; /* GLOBAL remove all ul dots */
-}
-
 body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
 
   color: var(--color-body-txt);
 }
+
+ul {
+  list-style-type: none; /* GLOBAL remove all ul dots */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block; /* to ask fix space below img */
+  max-width: 100%;
+  height: auto;
+}
+
 .address-footer {
   font-style: normal;
 
@@ -79,6 +84,7 @@ body {
 .logo-link {
   color: var(--color-logo);
 }
+
 .logo-link-footer {
   color: var(--color-logo-footer);
 }
@@ -120,13 +126,13 @@ body {
 
   color: var(--color-contacts-footer);
 }
+
 .main-header,
 .footer {
   background-color: var(--color-footer-bg);
 }
 
 /* file index.html */
-
 .hero-header {
   font-weight: 900;
   font-size: 44px;
@@ -281,8 +287,7 @@ body {
 .container {
   width: 1200px;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px;
 }
 
 .page-header {
