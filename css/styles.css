@@ -10,6 +10,9 @@ html {
 }
 
 /* colors */
+.flex {
+  display: flex;
+}
 
 :root {
   --color-logo: #000000;
@@ -31,6 +34,10 @@ html {
 
   --color-page-header-border: #ececec;
   --color-portfolio-card: #eeeeee;
+
+  --color-social-links: #afb1b8;
+  /* --color-gradient: #2f303a; */
+  --color-gradient: rgba(47, 48, 58, 0.4);
 }
 /* global part */
 .logo-link,
@@ -127,13 +134,24 @@ img {
   color: var(--color-contacts-footer);
 }
 
-.main-header,
+.main-header {
+  background-image: linear-gradient(to right, var(--color-gradient), var(--color-gradient)),
+    url('../images/hero-bg.jpg');
+
+  /* debug only */
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.9)),
+    url('../images/hero-bg.jpg');
+ */
+}
 .footer {
   background-color: var(--color-footer-bg);
 }
 
 /* file index.html */
 .hero-header {
+  width: 696px;
+  margin: 0 auto 30px auto;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -147,7 +165,10 @@ img {
 
 .features-title,
 .our-business-title,
-.our-team-title {
+.our-team-title,
+.clients-title {
+  margin-bottom: 50px;
+
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -187,9 +208,9 @@ img {
 
 /* team section */
 
-.our-team-title {
+/* .our-team-title {
   margin-bottom: 50px;
-}
+} */
 
 .team-list-title {
   font-weight: 500;
@@ -202,7 +223,8 @@ img {
   color: var(--color-H2);
 }
 .our-team-text {
-  /* font-weight: 500; */
+  margin-bottom: 16px;
+
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -274,7 +296,7 @@ img {
 
 /* hidding hidden :) */
 
-.visualy-hidden {
+.visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
@@ -337,17 +359,32 @@ ul {
   margin-left: auto;
 }
 
+/* .contacts-item {
+  display: flex;
+} */
+
 .contacts-item + .contacts-item {
   margin-left: 50px;
+}
+
+.contacts-header {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.envelope {
+  margin-right: 10px;
+}
+
+.envelope:hover,
+.envelope:hover {
+  fill: var(--color-link-on);
 }
 
 .main-header {
   padding: 200px 0;
   text-align: center;
-}
-.hero-header {
-  margin: 0 auto 30px auto;
-  width: 696px;
 }
 
 .features-list {
@@ -358,12 +395,18 @@ ul {
   padding-bottom: 94px;
 }
 
-.our-business-list {
-  display: flex;
+.features-thumb {
+  padding: 25px 100px;
+  background-color: var(--color-button-bg);
+  margin-bottom: 30px;
+}
+
+.features-icon {
+  fill: inherit;
 }
 
 .our-business-list {
-  margin-top: 50px;
+  display: flex;
 }
 
 .our-business-item + .our-business-item {
@@ -397,26 +440,111 @@ ul {
 .team-card {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.social-links-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--color-social-links);
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: var(--color-H1);
+  background-color: var(--color-button-bg-on);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-social-links);
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  fill: var(--color-H1);
+}
+
+.clients-list {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.clients-item {
+  width: 170px;
+  height: 92px;
+  padding: 16px 32px;
+
+  border: 1px solid #afb1b8;
+
+  border-radius: 4px;
+}
+
+.clients-item + .clients-item {
+  margin-left: 30px;
+}
+
+.clients-icon {
+  width: 106px;
+  height: 60px;
+  fill: var(--color-social-links);
+}
+
+.clients-icon:hover,
+.clients-icon:focus {
+  fill: var(--color-link-on);
 }
 
 .footer {
   padding: 60px 0;
 }
 
+.left-panel {
+  /* display: flex; */
+  margin-left: 215px;
+}
+
+/* .footer-list {
+  display: flex;
+} */
+
 .logo-link-footer {
   display: inline-block;
   margin-bottom: 20px;
 }
 
-.footer-item {
+.footer-item:not(:last-of-type) {
   margin-bottom: 8px;
 }
 
-.footer-item:last-of-type {
-  margin-bottom: 0px;
+.rigth-panel {
+  margin-left: 70px;
 }
 
-/* page portfolio */
+.rigth-panel-title {
+  margin-bottom: 20px;
+  color: var(--color-H1);
+}
+
+.social-links-list-footer .social-icon {
+  fill: var(--color-H1);
+}
+
+/* ----------------- page portfolio */
 .top-bar-list {
   display: flex;
   justify-content: center;
